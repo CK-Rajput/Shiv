@@ -7,7 +7,8 @@ export default function Solutions() {
     {
       title: "Manufacturing",
       icon: "🏭",
-      description: "Quality control, predictive maintenance, and supply chain optimization powered by AI.",
+      description:
+        "Quality control, predictive maintenance, and supply chain optimization powered by AI.",
       benefits: [
         "Reduce defects by up to 90%",
         "Predict equipment failures before they happen",
@@ -17,7 +18,8 @@ export default function Solutions() {
     {
       title: "Finance",
       icon: "🏦",
-      description: "Fraud detection, risk assessment, and algorithmic trading solutions.",
+      description:
+        "Fraud detection, risk assessment, and algorithmic trading solutions.",
       benefits: [
         "Real-time fraud detection",
         "Improved risk assessment accuracy",
@@ -27,7 +29,8 @@ export default function Solutions() {
     {
       title: "Healthcare",
       icon: "❤️",
-      description: "Medical imaging analysis, drug discovery, and patient care optimization.",
+      description:
+        "Medical imaging analysis, drug discovery, and patient care optimization.",
       benefits: [
         "Faster diagnosis with higher accuracy",
         "Accelerated drug discovery",
@@ -37,7 +40,8 @@ export default function Solutions() {
     {
       title: "Education",
       icon: "🎓",
-      description: "Personalized learning, automated grading, and educational content generation.",
+      description:
+        "Personalized learning, automated grading, and educational content generation.",
       benefits: [
         "Personalized learning paths",
         "Reduced grading time by 70%",
@@ -47,7 +51,8 @@ export default function Solutions() {
     {
       title: "E-commerce",
       icon: "🛒",
-      description: "Personalized recommendations, inventory management, and customer behavior analysis.",
+      description:
+        "Personalized recommendations, inventory management, and customer behavior analysis.",
       benefits: [
         "Increase sales by 40%",
         "Optimize inventory levels",
@@ -57,7 +62,8 @@ export default function Solutions() {
     {
       title: "Banking",
       icon: "🏛️",
-      description: "Risk management, fraud detection, credit scoring, and automated financial advisory services with AI.",
+      description:
+        "Risk management, fraud detection, credit scoring, and automated financial advisory services with AI.",
       benefits: [
         "Reduce fraud losses significantly",
         "Improve credit scoring accuracy",
@@ -71,10 +77,14 @@ export default function Solutions() {
       <Header />
 
       <section className="section-container">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
           <h1 className="section-title dark:text-white">Industry Solutions</h1>
           <p className="section-subtitle dark:text-gray-300">
-            Tailored AI solutions designed for specific industry challenges and opportunities
+            Tailored AI solutions designed for specific industry challenges and
+            opportunities
           </p>
         </motion.div>
 
@@ -91,8 +101,14 @@ export default function Solutions() {
           {solutions.map((solution, idx) => (
             <motion.div
               key={idx}
-              variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
-              whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(99, 102, 241, 0.1)" }}
+              variants={{
+                hidden: { opacity: 0, x: -20 },
+                visible: { opacity: 1, x: 0 },
+              }}
+              whileHover={{
+                y: -10,
+                boxShadow: "0 20px 40px rgba(99, 102, 241, 0.1)",
+              }}
               className="bg-gray-50 dark:bg-slate-800 rounded-lg p-8 transition-all"
             >
               <div className="flex items-start gap-4 mb-4">
@@ -108,8 +124,12 @@ export default function Solutions() {
                   </h3>
                 </div>
               </div>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">{solution.description}</p>
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-3">Key Benefits:</h4>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
+                {solution.description}
+              </p>
+              <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
+                Key Benefits:
+              </h4>
               <ul className="space-y-2">
                 {solution.benefits.map((benefit, bidx) => (
                   <motion.li
@@ -121,7 +141,9 @@ export default function Solutions() {
                     className="flex items-start gap-3"
                   >
                     <span className="text-primary mt-1">✓</span>
-                    <span className="text-gray-600 dark:text-gray-400">{benefit}</span>
+                    <span className="text-gray-600 dark:text-gray-400">
+                      {benefit}
+                    </span>
                   </motion.li>
                 ))}
               </ul>
@@ -146,7 +168,8 @@ export default function Solutions() {
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
         >
-          Let's discuss how our AI solutions can help you achieve your business goals
+          Let's discuss how our AI solutions can help you achieve your business
+          goals
         </motion.p>
         <motion.div
           className="text-center"

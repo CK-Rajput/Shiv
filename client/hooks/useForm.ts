@@ -11,7 +11,7 @@ interface FormData {
 export function useForm<T extends FormData>(
   initialValues: T,
   onSubmit: (values: T) => void | Promise<void>,
-  validate?: (values: T) => FormErrors
+  validate?: (values: T) => FormErrors,
 ) {
   const [values, setValues] = useState<T>(initialValues);
   const [errors, setErrors] = useState<FormErrors>({});
@@ -21,7 +21,8 @@ export function useForm<T extends FormData>(
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const { name, value, type } = e.target;
-      const newValue = type === "checkbox" ? (e.target as HTMLInputElement).checked : value;
+      const newValue =
+        type === "checkbox" ? (e.target as HTMLInputElement).checked : value;
       setValues((prev) => ({ ...prev, [name]: newValue }));
 
       if (validate) {
@@ -29,13 +30,16 @@ export function useForm<T extends FormData>(
         setErrors(fieldErrors);
       }
     },
-    [values, validate]
+    [values, validate],
   );
 
-  const handleBlur = useCallback((e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name } = e.target;
-    setTouched((prev) => ({ ...prev, [name]: true }));
-  }, []);
+  const handleBlur = useCallback(
+    (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { name } = e.target;
+      setTouched((prev) => ({ ...prev, [name]: true }));
+    },
+    [],
+  );
 
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
@@ -61,7 +65,7 @@ export function useForm<T extends FormData>(
         setIsSubmitting(false);
       }
     },
-    [values, validate, onSubmit, initialValues]
+    [values, validate, onSubmit, initialValues],
   );
 
   const resetForm = useCallback(() => {

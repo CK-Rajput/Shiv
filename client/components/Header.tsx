@@ -69,7 +69,9 @@ export default function Header() {
             whileTap={{ scale: 0.9 }}
           >
             <motion.span
-              animate={mobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+              animate={
+                mobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }
+              }
               className="w-6 h-0.5 bg-gray-700 dark:bg-gray-300"
             />
             <motion.span
@@ -77,7 +79,9 @@ export default function Header() {
               className="w-6 h-0.5 bg-gray-700 dark:bg-gray-300"
             />
             <motion.span
-              animate={mobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+              animate={
+                mobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }
+              }
               className="w-6 h-0.5 bg-gray-700 dark:bg-gray-300"
             />
           </motion.button>

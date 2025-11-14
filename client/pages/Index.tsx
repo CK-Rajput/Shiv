@@ -5,7 +5,9 @@ import { motion } from "framer-motion";
 import { useIntersectionObserver } from "@/hooks";
 
 export default function Index() {
-  const [floatingCards, setFloatingCards] = useState<{ id: number; delay: number }[]>([]);
+  const [floatingCards, setFloatingCards] = useState<
+    { id: number; delay: number }[]
+  >([]);
   const { ref: appRef } = useIntersectionObserver({ triggerOnce: true });
 
   useEffect(() => {
@@ -31,73 +33,223 @@ export default function Index() {
   const realWorldApplications = [
     {
       title: "Customer Service Automation",
-      description: "AI agents handling customer inquiries, routing requests, and resolving issues autonomously.",
+      description:
+        "AI agents handling customer inquiries, routing requests, and resolving issues autonomously.",
     },
     {
       title: "Financial Trading",
-      description: "Intelligent trading systems making split-second decisions based on market conditions and risk parameters.",
+      description:
+        "Intelligent trading systems making split-second decisions based on market conditions and risk parameters.",
     },
     {
       title: "Resource Management",
-      description: "Autonomous systems optimizing resource allocation, energy consumption, and operational efficiency.",
+      description:
+        "Autonomous systems optimizing resource allocation, energy consumption, and operational efficiency.",
     },
     {
       title: "Personalized Marketing & Sales",
-      description: "AI-driven platforms analyzing customer data to deliver hyper-personalized marketing campaigns, optimize sales funnels, and enhance customer engagement.",
+      description:
+        "AI-driven platforms analyzing customer data to deliver hyper-personalized marketing campaigns, optimize sales funnels, and enhance customer engagement.",
     },
     {
       title: "Healthcare & Medical Diagnosis",
-      description: "AI agents analyzing medical issues, patient data, and symptoms to assist doctors in diagnosis, treatment planning, and drug discovery.",
+      description:
+        "AI agents analyzing medical issues, patient data, and symptoms to assist doctors in diagnosis, treatment planning, and drug discovery.",
     },
     {
       title: "Smart Manufacturing & Quality Control",
-      description: "Autonomous systems monitoring production lines, detecting defects in real-time, and optimizing manufacturing processes for maximum efficiency.",
+      description:
+        "Autonomous systems monitoring production lines, detecting defects in real-time, and optimizing manufacturing processes for maximum efficiency.",
     },
   ];
 
   const generationCapabilities = [
-    { title: "Content Generation", icon: "✍️", description: "Create high-quality text, images, videos, and multimedia content automatically using advanced AI models." },
-    { title: "Code Generation", icon: "💻", description: "Automatically generate, optimize, and debug code across multiple programming languages and frameworks." },
-    { title: "Image & Video Creation", icon: "🎥", description: "Generate stunning visuals, animations, and video content tailored to your brand and requirements." },
-    { title: "Creative Media", icon: "🎵", description: "Produce original music, sound effects, and audio content for various platforms." },
-    { title: "Document Generation", icon: "📄", description: "Automatically create reports, proposals, documentation, and other business documents." },
-    { title: "Personalized Content", icon: "👤", description: "Generate customized content that adapts to user preferences, behavior, and specific requirements." },
+    {
+      title: "Content Generation",
+      icon: "✍️",
+      description:
+        "Create high-quality text, images, videos, and multimedia content automatically using advanced AI models.",
+    },
+    {
+      title: "Code Generation",
+      icon: "💻",
+      description:
+        "Automatically generate, optimize, and debug code across multiple programming languages and frameworks.",
+    },
+    {
+      title: "Image & Video Creation",
+      icon: "🎥",
+      description:
+        "Generate stunning visuals, animations, and video content tailored to your brand and requirements.",
+    },
+    {
+      title: "Creative Media",
+      icon: "🎵",
+      description:
+        "Produce original music, sound effects, and audio content for various platforms.",
+    },
+    {
+      title: "Document Generation",
+      icon: "📄",
+      description:
+        "Automatically create reports, proposals, documentation, and other business documents.",
+    },
+    {
+      title: "Personalized Content",
+      icon: "👤",
+      description:
+        "Generate customized content that adapts to user preferences, behavior, and specific requirements.",
+    },
   ];
 
   const industryApplications = [
-    { title: "Marketing & Advertising", description: "Create compelling ad copy, social media content, and marketing materials that resonate with your target audience." },
-    { title: "Product Development", description: "Generate product descriptions, user manuals, and technical documentation to accelerate development cycles." },
-    { title: "Education & Training", description: "Develop interactive learning materials, quizzes, and educational content personalized for different learning styles." },
-    { title: "Creative Industries", description: "Produce original artwork, music, stories, and creative content for entertainment and artistic applications." },
-    { title: "Legal & Compliance", description: "Generate legal documents, contracts, compliance reports, and automated legal research to streamline law firm operations." },
-    { title: "E-commerce & Retail", description: "Create product catalogs, customer reviews, personalized recommendations, and dynamic pricing strategies using AI-generated content." },
+    {
+      title: "Marketing & Advertising",
+      description:
+        "Create compelling ad copy, social media content, and marketing materials that resonate with your target audience.",
+    },
+    {
+      title: "Product Development",
+      description:
+        "Generate product descriptions, user manuals, and technical documentation to accelerate development cycles.",
+    },
+    {
+      title: "Education & Training",
+      description:
+        "Develop interactive learning materials, quizzes, and educational content personalized for different learning styles.",
+    },
+    {
+      title: "Creative Industries",
+      description:
+        "Produce original artwork, music, stories, and creative content for entertainment and artistic applications.",
+    },
+    {
+      title: "Legal & Compliance",
+      description:
+        "Generate legal documents, contracts, compliance reports, and automated legal research to streamline law firm operations.",
+    },
+    {
+      title: "E-commerce & Retail",
+      description:
+        "Create product catalogs, customer reviews, personalized recommendations, and dynamic pricing strategies using AI-generated content.",
+    },
   ];
 
   const industrySolutions = [
-    { title: "Manufacturing", icon: "🏭", description: "Quality control, predictive maintenance, and supply chain optimization powered by AI." },
-    { title: "Finance", icon: "🏦", description: "Fraud detection, risk assessment, and algorithmic trading solutions." },
-    { title: "Healthcare", icon: "❤️", description: "Medical imaging analysis, drug discovery, and patient care optimization." },
-    { title: "Education", icon: "🎓", description: "Personalized learning, automated grading, and educational content generation." },
-    { title: "E-commerce", icon: "🛒", description: "Personalized recommendations, inventory management, and customer behavior analysis." },
-    { title: "Banking", icon: "🏛️", description: "Risk management, fraud detection, credit scoring, and automated financial advisory services with AI." },
+    {
+      title: "Manufacturing",
+      icon: "🏭",
+      description:
+        "Quality control, predictive maintenance, and supply chain optimization powered by AI.",
+    },
+    {
+      title: "Finance",
+      icon: "🏦",
+      description:
+        "Fraud detection, risk assessment, and algorithmic trading solutions.",
+    },
+    {
+      title: "Healthcare",
+      icon: "❤️",
+      description:
+        "Medical imaging analysis, drug discovery, and patient care optimization.",
+    },
+    {
+      title: "Education",
+      icon: "🎓",
+      description:
+        "Personalized learning, automated grading, and educational content generation.",
+    },
+    {
+      title: "E-commerce",
+      icon: "🛒",
+      description:
+        "Personalized recommendations, inventory management, and customer behavior analysis.",
+    },
+    {
+      title: "Banking",
+      icon: "🏛️",
+      description:
+        "Risk management, fraud detection, credit scoring, and automated financial advisory services with AI.",
+    },
   ];
 
   const services = [
-    { title: "Machine Learning", icon: "🧠", description: "Custom ML models that learn from your data to make intelligent predictions and automate decision-making processes." },
-    { title: "Natural Language Processing", icon: "💭", description: "Advanced NLP solutions for chatbots, sentiment analysis, and automated text processing." },
-    { title: "Computer Vision", icon: "👁️", description: "Image and video analysis solutions for quality control, object detection, and visual recognition." },
-    { title: "Predictive Analytics", icon: "📈", description: "Data-driven insights and forecasting to help you make informed business decisions." },
-    { title: "Process Automation", icon: "⚙️", description: "Intelligent automation solutions that streamline workflows and reduce manual tasks." },
-    { title: "AI Security", icon: "🔒", description: "Advanced security solutions powered by AI to protect your business from emerging threats." },
+    {
+      title: "Machine Learning",
+      icon: "🧠",
+      description:
+        "Custom ML models that learn from your data to make intelligent predictions and automate decision-making processes.",
+    },
+    {
+      title: "Natural Language Processing",
+      icon: "💭",
+      description:
+        "Advanced NLP solutions for chatbots, sentiment analysis, and automated text processing.",
+    },
+    {
+      title: "Computer Vision",
+      icon: "👁️",
+      description:
+        "Image and video analysis solutions for quality control, object detection, and visual recognition.",
+    },
+    {
+      title: "Predictive Analytics",
+      icon: "📈",
+      description:
+        "Data-driven insights and forecasting to help you make informed business decisions.",
+    },
+    {
+      title: "Process Automation",
+      icon: "⚙️",
+      description:
+        "Intelligent automation solutions that streamline workflows and reduce manual tasks.",
+    },
+    {
+      title: "AI Security",
+      icon: "🔒",
+      description:
+        "Advanced security solutions powered by AI to protect your business from emerging threats.",
+    },
   ];
 
   const agenticCapabilities = [
-    { title: "Autonomous Decision Making", icon: "🤝", description: "AI agents that can make independent decisions based on real-time data and predefined objectives." },
-    { title: "Multi-Agent Systems", icon: "👥", description: "Coordinated AI agents working together to solve complex problems and optimize business processes." },
-    { title: "Self-improving Systems", icon: "🔄", description: "AI agents that continuously learn and adapt their strategies based on performance feedback." },
-    { title: "Distributed Intelligence", icon: "🌐", description: "Scalable agent networks that can handle complex workflows across multiple systems and platforms." },
-    { title: "Human-AI Collaboration", icon: "🤖", description: "Seamless integration between human workers and AI agents for enhanced productivity." },
-    { title: "Real-time Response", icon: "⚡", description: "Intelligent agents that respond instantly to changing conditions and business requirements." },
+    {
+      title: "Autonomous Decision Making",
+      icon: "🤝",
+      description:
+        "AI agents that can make independent decisions based on real-time data and predefined objectives.",
+    },
+    {
+      title: "Multi-Agent Systems",
+      icon: "👥",
+      description:
+        "Coordinated AI agents working together to solve complex problems and optimize business processes.",
+    },
+    {
+      title: "Self-improving Systems",
+      icon: "🔄",
+      description:
+        "AI agents that continuously learn and adapt their strategies based on performance feedback.",
+    },
+    {
+      title: "Distributed Intelligence",
+      icon: "🌐",
+      description:
+        "Scalable agent networks that can handle complex workflows across multiple systems and platforms.",
+    },
+    {
+      title: "Human-AI Collaboration",
+      icon: "🤖",
+      description:
+        "Seamless integration between human workers and AI agents for enhanced productivity.",
+    },
+    {
+      title: "Real-time Response",
+      icon: "⚡",
+      description:
+        "Intelligent agents that respond instantly to changing conditions and business requirements.",
+    },
   ];
 
   const containerVariants = {
@@ -245,9 +397,12 @@ export default function Index() {
         variants={containerVariants}
         className="section-container bg-gray-50 dark:bg-slate-800 transition-colors"
       >
-        <h2 className="section-title dark:text-white">Generative AI Solutions</h2>
+        <h2 className="section-title dark:text-white">
+          Generative AI Solutions
+        </h2>
         <p className="section-subtitle dark:text-gray-300">
-          Create, innovate, and transform with AI that generates original content across all media types
+          Create, innovate, and transform with AI that generates original
+          content across all media types
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
@@ -384,7 +539,8 @@ export default function Index() {
       >
         <h2 className="section-title dark:text-white">Agentic AI Solutions</h2>
         <p className="section-subtitle dark:text-gray-300">
-          Autonomous AI agents that think, act, and adapt independently to drive your business forward
+          Autonomous AI agents that think, act, and adapt independently to drive
+          your business forward
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
@@ -470,7 +626,9 @@ function SectionRenderer({
       viewport={{ once: true }}
       variants={containerVariants}
       className={`section-container ${
-        variant === "bordered" ? "bg-white dark:bg-slate-900" : "bg-gray-50 dark:bg-slate-800"
+        variant === "bordered"
+          ? "bg-white dark:bg-slate-900"
+          : "bg-gray-50 dark:bg-slate-800"
       } transition-colors`}
     >
       <h2 className="section-title dark:text-white">{title}</h2>

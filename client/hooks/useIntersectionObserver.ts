@@ -7,28 +7,31 @@ interface UseIntersectionObserverOptions extends IntersectionObserverInit {
 }
 
 export function useIntersectionObserver<T extends HTMLElement>(
-  options: UseIntersectionObserverOptions = {}
+  options: UseIntersectionObserverOptions = {},
 ) {
   const ref = useRef<T>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [hasBeenVisible, setHasBeenVisible] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIsVisible(true);
-        setHasBeenVisible(true);
-        options.onEnter?.();
-      } else {
-        if (!options.triggerOnce) {
-          setIsVisible(false);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          setHasBeenVisible(true);
+          options.onEnter?.();
+        } else {
+          if (!options.triggerOnce) {
+            setIsVisible(false);
+          }
+          options.onExit?.();
         }
-        options.onExit?.();
-      }
-    }, {
-      threshold: 0.1,
-      ...options,
-    });
+      },
+      {
+        threshold: 0.1,
+        ...options,
+      },
+    );
 
     if (ref.current) {
       observer.observe(ref.current);

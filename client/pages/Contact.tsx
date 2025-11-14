@@ -13,7 +13,12 @@ interface ContactFormData {
 }
 
 export default function Contact() {
-  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useReactHookForm<ContactFormData>({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useReactHookForm<ContactFormData>({
     defaultValues: {
       name: "",
       email: "",
@@ -97,10 +102,15 @@ export default function Contact() {
                   placeholder="John Doe"
                   {...register("name", {
                     required: "Name is required",
-                    minLength: { value: 2, message: "Name must be at least 2 characters" },
+                    minLength: {
+                      value: 2,
+                      message: "Name must be at least 2 characters",
+                    },
                   })}
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-slate-800 dark:text-white dark:border-slate-700 transition-all ${
-                    errors.name ? "border-red-500 focus:ring-red-500" : "border-gray-300"
+                    errors.name
+                      ? "border-red-500 focus:ring-red-500"
+                      : "border-gray-300"
                   }`}
                 />
                 {errors.name && (
@@ -136,7 +146,9 @@ export default function Contact() {
                     },
                   })}
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-slate-800 dark:text-white dark:border-slate-700 transition-all ${
-                    errors.email ? "border-red-500 focus:ring-red-500" : "border-gray-300"
+                    errors.email
+                      ? "border-red-500 focus:ring-red-500"
+                      : "border-gray-300"
                   }`}
                 />
                 {errors.email && (
@@ -185,10 +197,15 @@ export default function Contact() {
                   rows={5}
                   {...register("message", {
                     required: "Message is required",
-                    minLength: { value: 10, message: "Message must be at least 10 characters" },
+                    minLength: {
+                      value: 10,
+                      message: "Message must be at least 10 characters",
+                    },
                   })}
                   className={`w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-slate-800 dark:text-white dark:border-slate-700 transition-all ${
-                    errors.message ? "border-red-500 focus:ring-red-500" : "border-gray-300"
+                    errors.message
+                      ? "border-red-500 focus:ring-red-500"
+                      : "border-gray-300"
                   }`}
                 />
                 {errors.message && (
@@ -238,7 +255,9 @@ export default function Contact() {
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
                       {info.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400">{info.value}</p>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      {info.value}
+                    </p>
                   </div>
                 </div>
               </motion.a>

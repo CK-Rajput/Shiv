@@ -23,7 +23,8 @@ export default function About() {
         >
           <h1 className="section-title dark:text-white">About Maheshwara.ai</h1>
           <p className="section-subtitle dark:text-gray-300">
-            Empowering businesses through intelligent automation, Agentic AI, and Generative AI solutions
+            Empowering businesses through intelligent automation, Agentic AI,
+            and Generative AI solutions
           </p>
         </motion.div>
 
@@ -34,12 +35,22 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Leading the AI Revolution</h2>
+            <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+              Leading the AI Revolution
+            </h2>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-              At Maheshwara.ai, we specialize in creating intelligent solutions that transform how businesses operate. Our team of AI experts and data scientists work tirelessly to deliver cutting-edge technologies including Agentic AI and Generative AI that drive real results.
+              At Maheshwara.ai, we specialize in creating intelligent solutions
+              that transform how businesses operate. Our team of AI experts and
+              data scientists work tirelessly to deliver cutting-edge
+              technologies including Agentic AI and Generative AI that drive
+              real results.
             </p>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-              We believe in the power of artificial intelligence to solve complex business challenges and accelerate growth. Our commitment to innovation and excellence ensures that our clients receive solutions that are not just advanced, but also practical and immediately impactful.
+              We believe in the power of artificial intelligence to solve
+              complex business challenges and accelerate growth. Our commitment
+              to innovation and excellence ensures that our clients receive
+              solutions that are not just advanced, but also practical and
+              immediately impactful.
             </p>
 
             <motion.div
@@ -55,12 +66,19 @@ export default function About() {
               {stats.map((stat, idx) => (
                 <motion.div
                   key={idx}
-                  variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
                   whileHover={{ y: -5, scale: 1.05 }}
                 >
                   <div className="text-2xl mb-2">{stat.icon}</div>
-                  <p className="text-4xl font-bold text-primary">{stat.value}</p>
-                  <p className="text-gray-600 dark:text-gray-400 mt-2 text-sm">{stat.label}</p>
+                  <p className="text-4xl font-bold text-primary">
+                    {stat.value}
+                  </p>
+                  <p className="text-gray-600 dark:text-gray-400 mt-2 text-sm">
+                    {stat.label}
+                  </p>
                 </motion.div>
               ))}
             </motion.div>
