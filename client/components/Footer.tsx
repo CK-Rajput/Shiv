@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-800 text-gray-300 py-16">
+    <footer className="bg-slate-800 dark:bg-slate-950 text-gray-300 dark:text-gray-400 py-16 transition-colors">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}

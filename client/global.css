@@ -105,6 +105,7 @@
 
   body {
     @apply bg-background text-foreground;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
@@ -116,6 +117,21 @@
   code {
     overflow-x: auto;
     white-space: pre;
+  }
+
+  /* Dark mode specific styles */
+  .dark {
+    color-scheme: dark;
+  }
+
+  .dark input,
+  .dark textarea {
+    @apply bg-slate-800 text-white border-slate-700;
+  }
+
+  .dark input::placeholder,
+  .dark textarea::placeholder {
+    @apply text-slate-500;
   }
 }
 
