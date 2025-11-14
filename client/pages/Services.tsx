@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { motion } from "framer-motion";
 
 export default function Services() {
   const services = [
@@ -42,46 +43,90 @@ export default function Services() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors">
       <Header />
 
       <section className="section-container">
-        <h1 className="section-title">Our Services</h1>
-        <p className="section-subtitle">
-          Comprehensive AI solutions tailored to your business needs
-        </p>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+          <h1 className="section-title dark:text-white">Our Services</h1>
+          <p className="section-subtitle dark:text-gray-300">
+            Comprehensive AI solutions tailored to your business needs
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+          }}
+        >
           {services.map((service, idx) => (
-            <div key={idx} className="bg-gray-50 rounded-lg p-8 hover:shadow-lg transition-shadow">
-              <div className="text-5xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-bold mb-2 text-gray-900">{service.title}</h3>
-              <p className="text-gray-600 text-sm mb-4">{service.description}</p>
-              <p className="text-gray-600 text-sm text-muted-foreground">{service.details}</p>
-            </div>
+            <motion.div
+              key={idx}
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(99, 102, 241, 0.1)" }}
+              className="bg-gray-50 dark:bg-slate-800 rounded-lg p-8 transition-all"
+            >
+              <motion.div
+                className="text-5xl mb-4"
+                whileHover={{ scale: 1.2, rotate: 10 }}
+              >
+                {service.icon}
+              </motion.div>
+              <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{service.title}</h3>
+              <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{service.description}</p>
+              <p className="text-gray-600 dark:text-gray-500 text-sm">{service.details}</p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </section>
 
-      <section className="section-container bg-blue-50">
-        <h2 className="section-title">Why Choose Our Services?</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="text-4xl mb-3">⚡</div>
-            <h3 className="font-bold text-lg mb-2 text-gray-900">Fast Implementation</h3>
-            <p className="text-gray-600">Quick deployment of AI solutions with minimal disruption to your operations.</p>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl mb-3">📊</div>
-            <h3 className="font-bold text-lg mb-2 text-gray-900">Measurable Results</h3>
-            <p className="text-gray-600">Transparent metrics and KPIs to track the impact of our AI solutions.</p>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl mb-3">🎯</div>
-            <h3 className="font-bold text-lg mb-2 text-gray-900">Expert Support</h3>
-            <p className="text-gray-600">Dedicated support team available 24/7 to ensure your success.</p>
-          </div>
-        </div>
+      <section className="section-container bg-blue-50 dark:bg-slate-800 transition-colors">
+        <motion.h2
+          className="section-title dark:text-white"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Why Choose Our Services?
+        </motion.h2>
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
+          }}
+        >
+          {[
+            { emoji: "⚡", title: "Fast Implementation", desc: "Quick deployment of AI solutions with minimal disruption to your operations." },
+            { emoji: "📊", title: "Measurable Results", desc: "Transparent metrics and KPIs to track the impact of our AI solutions." },
+            { emoji: "🎯", title: "Expert Support", desc: "Dedicated support team available 24/7 to ensure your success." },
+          ].map((item, idx) => (
+            <motion.div
+              key={idx}
+              variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+              whileHover={{ scale: 1.05 }}
+              className="text-center"
+            >
+              <motion.div
+                className="text-4xl mb-3"
+                whileHover={{ rotate: 360, scale: 1.2 }}
+                transition={{ duration: 0.6 }}
+              >
+                {item.emoji}
+              </motion.div>
+              <h3 className="font-bold text-lg mb-2 text-gray-900 dark:text-white">{item.title}</h3>
+              <p className="text-gray-600 dark:text-gray-400">{item.desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
       </section>
 
       <Footer />
