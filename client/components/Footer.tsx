@@ -50,9 +50,13 @@ export default function Footer() {
           >
             <motion.div
               whileHover={{ scale: 1.1, rotate: 10 }}
-              className="text-2xl font-bold text-cyan-400 mb-4 w-fit"
+              className="text-2xl font-bold text-cyan-400 mb-4 w-fit mx-auto"
             >
-              M
+              <img
+                src="public/Maheshwara.ai_logo_image_1.png"
+                alt="Maheshwara.ai Logo"
+                className="w-20 h-20 inline-block mr-2"
+              />
             </motion.div>
             <p className="text-sm leading-relaxed">
               Maheshwara.ai builds AI systems that automate complex workflows,
@@ -176,10 +180,10 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+1-555-0100"
+                  href="tel:+91-8890502275"
                   className="text-sm hover:text-primary transition-colors"
                 >
-                  Phone: +1-555-0100
+                  Phone: +91-8890502275
                 </a>
               </li>
               <li>

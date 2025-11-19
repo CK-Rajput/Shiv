@@ -54,11 +54,30 @@ export default function Services() {
     },
   ];
 
+  const whyChoose = [
+    {
+      emoji: "⚡",
+      title: "Fast Implementation",
+      desc: "Quick deployment of AI solutions with minimal disruption to your operations.",
+    },
+    {
+      emoji: "📊",
+      title: "Measurable Results",
+      desc: "Transparent metrics and KPIs to track the impact of our AI solutions.",
+    },
+    {
+      emoji: "🎯",
+      title: "Expert Support",
+      desc: "Dedicated support team available 24/7 to ensure your success.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors">
       <Header />
 
-      <section className="section-container">
+      {/* SERVICES MAIN SECTION */}
+      <section className="section-container w-[80%] mx-auto py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -69,8 +88,9 @@ export default function Services() {
           </p>
         </motion.div>
 
+        {/* Services Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -98,12 +118,15 @@ export default function Services() {
               >
                 {service.icon}
               </motion.div>
+
               <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
                 {service.title}
               </h3>
+
               <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
                 {service.description}
               </p>
+
               <p className="text-gray-600 dark:text-gray-500 text-sm">
                 {service.details}
               </p>
@@ -112,17 +135,22 @@ export default function Services() {
         </motion.div>
       </section>
 
-      <section className="section-container bg-blue-50 dark:bg-slate-800 transition-colors">
+      {/* WHY CHOOSE US SECTION */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-800 dark:to-slate-900 px-4 sm:px-6 md:px-12 lg:px-24 py-16 transition-colors">
+
+        {/* Section Title */}
         <motion.h2
-          className="section-title dark:text-white"
+          className="section-title text-center dark:text-white mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           Why Choose Our Services?
         </motion.h2>
+
+        {/* Why Choose Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -131,23 +159,7 @@ export default function Services() {
             visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
           }}
         >
-          {[
-            {
-              emoji: "⚡",
-              title: "Fast Implementation",
-              desc: "Quick deployment of AI solutions with minimal disruption to your operations.",
-            },
-            {
-              emoji: "📊",
-              title: "Measurable Results",
-              desc: "Transparent metrics and KPIs to track the impact of our AI solutions.",
-            },
-            {
-              emoji: "🎯",
-              title: "Expert Support",
-              desc: "Dedicated support team available 24/7 to ensure your success.",
-            },
-          ].map((item, idx) => (
+          {whyChoose.map((item, idx) => (
             <motion.div
               key={idx}
               variants={{
@@ -155,7 +167,6 @@ export default function Services() {
                 visible: { opacity: 1, y: 0 },
               }}
               whileHover={{ scale: 1.05 }}
-              className="text-center"
             >
               <motion.div
                 className="text-4xl mb-3"
@@ -164,10 +175,14 @@ export default function Services() {
               >
                 {item.emoji}
               </motion.div>
+
               <h3 className="font-bold text-lg mb-2 text-gray-900 dark:text-white">
                 {item.title}
               </h3>
-              <p className="text-gray-600 dark:text-gray-400">{item.desc}</p>
+
+              <p className="text-gray-600 dark:text-gray-400">
+                {item.desc}
+              </p>
             </motion.div>
           ))}
         </motion.div>

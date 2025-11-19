@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navLinks = [
     { to: "/", label: "Home" },
@@ -16,50 +17,58 @@ export default function Header() {
 
   return (
     <header className="bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-800 sticky top-0 z-50 transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="w-full pl-0 pr-[6%]">
+        <div className="flex items-center justify-between h-16 flex-nowrap">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2 ml-[12%]">
             <span className="text-xl md:text-2xl font-bold text-primary dark:text-primary">
               Maheshwara.ai
             </span>
           </Link>
 
-          {/* Navigation Menu */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <motion.div
-                key={link.to}
-                whileHover={{ y: -2 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Link
-                  to={link.to}
-                  className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium"
+          {/* Right side: navigation + actions grouped and right-aligned */}
+          <div className="flex-1 flex items-center justify-end gap-16">
+            <nav className="hidden md:flex items-center gap-[5%] flex-nowrap">
+              {navLinks.map((link) => (
+                <motion.div
+                  key={link.to}
+                  whileHover={{ y: -2 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
-                  {link.label}
-                </Link>
-              </motion.div>
-            ))}
-          </nav>
+                  <Link
+                    to={link.to}
+                    className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium whitespace-nowrap"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+            </nav>
 
-          {/* Right Side - Actions */}
-          <div className="flex items-center gap-2 md:gap-4">
-            <ThemeToggle />
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="hidden md:inline-flex btn-outline text-sm dark:border-primary dark:text-primary"
-            >
-              Why us
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-primary text-xs md:text-sm px-3 md:px-6 py-2"
-            >
-              Get Free consultation
-            </motion.button>
+            {/* Right Side - Actions */}
+            <div className="flex items-center gap-[7%] flex-nowrap">
+              <ThemeToggle />
+              <motion.button
+                type="button"
+                aria-label="Why us"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="hidden md:inline-flex btn-outline text-sm dark:border-primary dark:text-primary whitespace-nowrap"
+                onClick={() => navigate("/about")}
+              >
+                Why us
+              </motion.button>
+              <motion.button
+                type="button"
+                aria-label="Get Free consultation"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="hidden md:inline-flex btn-primary text-xs md:text-sm px-3 md:px-6 py-2 whitespace-nowrap"
+                onClick={() => navigate("/contact")}
+              >
+                Get Free consultation
+              </motion.button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -98,15 +107,33 @@ export default function Header() {
               className="md:hidden pb-4 space-y-3 overflow-hidden"
             >
               {navLinks.map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className="block text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium py-2"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+
+              {/* Mobile-only action links (collapsed actions) */}
+              <div className="pt-3 border-t border-gray-200 dark:border-slate-700 mt-2 space-y-2">
                 <Link
-                  key={link.to}
-                  to={link.to}
-                  className="block text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium py-2"
+                  to="/about"
+                  className="block text-center btn-outline py-2 rounded w-full"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  {link.label}
+                  Why us
                 </Link>
-              ))}
+                <Link
+                  to="/contact"
+                  className="block text-center btn-primary py-2 rounded w-full"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Get Free consultation
+                </Link>
+              </div>
             </motion.nav>
           )}
         </AnimatePresence>

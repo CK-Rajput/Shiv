@@ -19,7 +19,7 @@ export default function ThemeToggle() {
       >
         {theme === "light" ? (
           <svg
-            className="w-6 h-6 text-yellow-500"
+            className="w-12 h-10 text-yellow-500"
             fill="currentColor"
             viewBox="0 0 20 20"
           >
@@ -31,7 +31,7 @@ export default function ThemeToggle() {
           </svg>
         ) : (
           <svg
-            className="w-6 h-6 text-blue-400"
+            className="w-12 h-10 text-blue-400"
             fill="currentColor"
             viewBox="0 0 20 20"
           >

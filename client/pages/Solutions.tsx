@@ -124,12 +124,15 @@ export default function Solutions() {
                   </h3>
                 </div>
               </div>
+
               <p className="text-gray-600 dark:text-gray-400 mb-6">
                 {solution.description}
               </p>
+
               <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
                 Key Benefits:
               </h4>
+
               <ul className="space-y-2">
                 {solution.benefits.map((benefit, bidx) => (
                   <motion.li
@@ -152,32 +155,21 @@ export default function Solutions() {
         </motion.div>
       </section>
 
-      <section className="section-container bg-blue-50 dark:bg-slate-800 transition-colors">
-        <motion.h2
-          className="section-title dark:text-white"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          Ready to Transform Your Business?
-        </motion.h2>
-        <motion.p
-          className="section-subtitle dark:text-gray-300 mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-        >
-          Let's discuss how our AI solutions can help you achieve your business
-          goals
-        </motion.p>
+      <section className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-800 dark:to-slate-900 px-4 sm:px-6 md:px-12 lg:px-24 py-16 transition-colors text-center">
         <motion.div
-          className="text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
         >
+          <h2 className="section-title dark:text-white mb-4">
+            Ready to Transform Your Business?
+          </h2>
+
+          <p className="section-subtitle dark:text-gray-300 max-w-2xl mx-auto mb-8">
+            Let's discuss how our AI solutions can help you achieve your
+            business goals.
+          </p>
+
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

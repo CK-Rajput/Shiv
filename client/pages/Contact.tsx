@@ -51,9 +51,9 @@ export default function Contact() {
     },
     {
       title: "Phone",
-      value: "+1-555-0100",
+      value: "+91-8890502275",
       icon: "📞",
-      href: "tel:+1-555-0100",
+      href: "tel:+91-8890502275",
     },
     {
       title: "Hours",

@@ -277,7 +277,7 @@ export default function Index() {
       <Header />
 
       {/* Hero Section */}
-      <section className="min-h-screen bg-gradient-to-br from-blue-50 dark:from-slate-800 to-indigo-100 dark:to-slate-900 flex items-center transition-colors">
+      <section className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-slate-800 dark:to-slate-900 flex flex-col md:flex-row items-center md:items-start px-4 sm:px-6 md:px-12 lg:px-24 py-10 sm:py-12 md:py-16 lg:py-20 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -395,7 +395,7 @@ export default function Index() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="section-container bg-gray-50 dark:bg-slate-800 transition-colors"
+        className="w-full px-4 sm:px-6 md:px-12 lg:px-24 py-12 md:py-16 lg:py-20 bg-blue-50 dark:bg-slate-800 transition-colors"
       >
         <h2 className="section-title dark:text-white">
           Generative AI Solutions
@@ -464,7 +464,7 @@ export default function Index() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="section-container bg-gray-50 dark:bg-slate-800 transition-colors"
+        className="w-full px-4 sm:px-6 md:px-12 lg:px-24 py-12 md:py-16 lg:py-20 bg-blue-50 dark:bg-slate-800 transition-colors"
       >
         <h2 className="section-title dark:text-white">Industry Solutions</h2>
         <p className="section-subtitle dark:text-gray-300">
@@ -535,7 +535,7 @@ export default function Index() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="section-container bg-blue-50 dark:bg-slate-800 transition-colors"
+        className="w-full px-4 sm:px-6 md:px-12 lg:px-24 py-12 md:py-16 lg:py-20 bg-blue-50 dark:bg-slate-800 transition-colors"
       >
         <h2 className="section-title dark:text-white">Agentic AI Solutions</h2>
         <p className="section-subtitle dark:text-gray-300">
