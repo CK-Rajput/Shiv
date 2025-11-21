@@ -1,0 +1,195 @@
+Project Name: Maheshwara.ai - AI Security Platform
+Design Aesthetic: Dark Mode, Cyberpunk/Futuristic, Glassmorphism, Neon Gradients (Purple/Pink/Blue).
+
+---
+
+# 1. Header / Navigation
+- **Logo**: Maheshwara.ai (Text with Icon)
+  - Functionality: Clicking logo navigates to Home page (/)
+- **Navigation Links**: 
+  - Home (navigates to /)
+  - About (navigates to /about)
+  - Services (navigates to /services)
+  - Solutions (navigates to /solutions)
+  - Contact (navigates to /contact)
+- **Action Buttons**:
+  - **"Why us" Button**: Outline style, navigates to About page (/about)
+  - **"Product" Button**: Gradient background (Purple to Pink), navigates to Product page (/product)
+- **Theme Toggle**: Switch between light/dark mode
+- **Mobile Menu**: Hamburger menu for responsive navigation
+
+---
+
+# 2. Hero Section (Floating Mockups)
+- **Background**: Deep dark blue/purple (#0f0a1e) with radial gradient glows.
+- **Badge**: "Next-Gen AI Security" (Outline style with Sparkles icon)
+- **Headline**: "Intelligent Recognition System" (Gradient text on "Recognition")
+- **Subheadline**: "Powered by Maheshwara.ai - Advanced facial recognition, pose detection, and real-time analytics. Secure every space with AI that never sleeps."
+- **Buttons & Interactive Elements**:
+  - **"Request Demo" Button**: 
+    - Style: Gradient Purple/Pink background with shadow
+    - Functionality: Opens demo request form/page
+    - Text: "Request Demo"
+  - **"System Online" Indicator**: 
+    - Style: Glassmorphism container with green pulsing dot
+    - Status: Live system status display
+    - Text: "System Online"
+- **Key Stats**:
+  - 99.9% Accuracy Rate
+  - <100ms Response Time
+  - 24/7 Monitoring
+- **Visual**: 3D Floating Device Mockup
+  - Content: Simulated camera feed with UI overlays (REC indicator, Detection boxes, Activity graph).
+  - Animation: Floating/Hovering effect.
+  - UI Elements on Mockup:
+    - "REC" indicator with pulsing red dot
+    - "CAM-01" camera identifier
+    - "Person 98%" detection label
+    - "Activity: Normal" status with progress bar
+
+---
+
+# 3. Features Section
+- **Section Title**: "Powerful Features"
+- **Badge**: "Core Capabilities"
+- **Layout**: 2-Column Grid. Large horizontal cards with split layout (Image Left, Content Right).
+- **Card Style**: Dark glassmorphism, rounded corners, gradient border on hover.
+- **Content Items**:
+  1. **Facial Recognition**
+     - Subtitle: High Precision Matching
+     - Description: Advanced AI-powered facial recognition with 99.9% accuracy. Match faces against databases in milliseconds.
+     - Tags: 99.9% Accuracy, Deep Learning, Milliseconds, Face Match
+  2. **Pose Detection**
+     - Subtitle: Behavioral Analysis
+     - Description: Real-time pose and body language analysis to detect suspicious activities and unusual behaviors.
+     - Tags: Real-time, Body Language, Suspicious Activity, AI Analysis
+  3. **Headcount & Tracking**
+     - Subtitle: Crowd Analytics
+     - Description: Accurate people counting and crowd monitoring. Track movement patterns and occupancy in real-time.
+     - Tags: People Counting, Occupancy, Movement, Heatmaps
+  4. **Illegal Activity Monitoring**
+     - Subtitle: Threat Prevention
+     - Description: Detect and alert on suspicious behaviors, unauthorized access, and potential security breaches instantly.
+     - Tags: Instant Alerts, Breach Detect, Unauthorized Access, Security
+  5. **24/7 Real-time Processing**
+     - Subtitle: Continuous Surveillance
+     - Description: Continuous monitoring with instant alerts and notifications. Process thousands of faces per second.
+     - Tags: Always On, Instant Notification, High Throughput, Reliable
+  6. **Lightning Fast**
+     - Subtitle: Low Latency Performance
+     - Description: Sub-second processing speeds with optimized algorithms. Minimal latency for critical security operations.
+     - Tags: Sub-second, Optimized, Edge Computing, Fast Response
+
+---
+
+# 4. Industries Section
+- **Section Title**: "Industries We Serve"
+- **Badge**: "Sectors"
+- **Layout**: 2-Column Grid. Large horizontal cards with split layout.
+- **Content Items**:
+  1. **BFSI**
+     - Subtitle: Fraud Detection & KYC
+     - Description: Prevent fraud, verify customer identity, and ensure secure transactions with real-time facial recognition.
+     - Tags: KYC Verification, Fraud Detection, Access Control, Transaction Security
+  2. **Healthcare**
+     - Subtitle: Patient Safety & Security
+     - Description: Enhance patient safety, track visitors, and secure restricted areas with automated monitoring.
+     - Tags: Patient ID, Visitor Tracking, Area Access, Staff Monitor
+  3. **Railways**
+     - Subtitle: Public Safety
+     - Description: Monitor large crowds, detect suspicious activities, and enhance public safety in transit hubs.
+     - Tags: Crowd Monitor, Threat Detect, Lost Person, Analytics
+  4. **Retail & Cafes**
+     - Subtitle: Customer Experience
+     - Description: Improve customer service, prevent theft, and analyze foot traffic patterns.
+     - Tags: Analytics, Loss Prevention, Queue Manage, VIP Recognize
+  5. **Government**
+     - Subtitle: Enhanced Security
+     - Description: Secure government facilities, monitor public spaces, and detect potential threats.
+     - Tags: Border Control, Facility Secure, Event Monitor, Watchlist
+  6. **Private Enterprises**
+     - Subtitle: Access Control
+     - Description: Streamline employee access, track attendance, and secure your workplace.
+     - Tags: Attendance, Access Manage, Visitor Register, Security
+
+---
+
+# 5. Use Cases Section
+- **Section Title**: "Proven Use Cases"
+- **Badge**: "Real-World Applications"
+- **Layout**: 2-Column Grid. Large horizontal cards with split layout.
+- **Content Items**:
+  1. **KYC & Fraud Detection** (Identity Verification)
+  2. **Patient Safety** (Healthcare Security)
+  3. **Crowd Management** (Public Safety)
+  4. **Access Control** (Workplace Security)
+  5. **Loss Prevention** (Retail Security)
+  6. **Threat Detection** (Proactive Security)
+
+---
+
+# 6. Technology Section
+- **Section Title**: "Cutting-Edge Technology"
+- **Badge**: "Technology Stack"
+- **Layout**: 2-Column Grid. Large horizontal cards with split layout.
+- **Content Items**:
+  1. **Deep Learning AI**
+     - Subtitle: Advanced Neural Networks
+     - Description: Neural networks trained on millions of images to achieve human-level recognition accuracy.
+  2. **Scalable Database**
+     - Subtitle: High Performance Storage
+     - Description: Distributed database architecture capable of storing and matching millions of facial profiles in milliseconds.
+  3. **Encrypted & Secure**
+     - Subtitle: Enterprise Grade Security
+     - Description: Military-grade end-to-end encryption ensuring your data remains private and compliant with global standards.
+  4. **Edge Computing**
+     - Subtitle: Distributed Processing
+     - Description: Process data locally on edge devices for ultra-low latency and reduced bandwidth usage.
+
+---
+
+# 7. Call to Action (CTA)
+- **Section Title**: "Ready to Transform Your Security?"
+- **Badge**: "Get Started Today" (with Sparkles icon)
+- **Subtext**: "Join leading organizations who trust Maheshwara.ai for their security needs."
+- **Buttons & Interactive Elements**:
+  - **"Schedule a Demo" Button**:
+    - Text: "Schedule a Demo"
+    - Style: Gradient Purple/Pink with arrow icon
+    - Icon: Arrow Right (animates on hover)
+    - Functionality: Opens demo scheduling form/calendar
+    - State: Hover effect reduces opacity to 90%, arrow moves right on hover
+- **Contact Cards** (Interactive):
+  - **Email Card**:
+    - Icon: Mail icon in purple circle
+    - Label: "Email Us"
+    - Content: "Support@Maheshwara.ai"
+    - Functionality: Click to open email client (mailto:)
+    - Hover Effect: Lifts up 5px, background changes to white/10
+  - **Phone Card**:
+    - Icon: Phone icon in pink circle
+    - Label: "Call Us"
+    - Content: "+91-8890502275"
+    - Functionality: Click to initiate call (tel:)
+    - Hover Effect: Lifts up 5px, background changes to white/10
+- **Footer**: 
+  - Text: "© 2025 Maheshwara.ai. All rights reserved."
+  - Style: Gray text with top border
+
+---
+
+# 8. Global Interactive Features
+- **Animations**:
+  - Scroll-triggered fade-in animations on all sections
+  - Floating 3D background element (rotates on scroll)
+  - Card hover effects (lift, border glow)
+  - Button hover states (scale, opacity changes)
+  - Tag hover effects (border color change)
+- **Responsive Design**:
+  - Mobile menu toggle
+  - Grid layouts adapt: 2-column on desktop, 1-column on mobile
+  - Text sizes scale down on smaller screens
+- **Accessibility**:
+  - All buttons have aria-labels
+  - Keyboard navigation support
+  - Focus states on interactive elements

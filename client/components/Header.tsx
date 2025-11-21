@@ -26,7 +26,7 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* Right side: navigation + actions grouped and right-aligned */}
+          {/* Right side: navigation */}
           <div className="flex-1 flex items-center justify-end gap-16">
             <nav className="hidden md:flex items-center gap-[5%] flex-nowrap">
               {navLinks.map((link) => (
@@ -60,13 +60,13 @@ export default function Header() {
               </motion.button>
               <motion.button
                 type="button"
-                aria-label="Get Free consultation"
+                aria-label="Product"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="hidden md:inline-flex btn-primary text-xs md:text-sm px-3 md:px-6 py-2 whitespace-nowrap"
-                onClick={() => navigate("/contact")}
+                className="hidden md:inline-flex items-center justify-center px-6 py-2 text-sm font-medium text-white transition-all duration-200 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg shadow-purple-500/25 whitespace-nowrap"
+                onClick={() => navigate("/product")}
               >
-                Get Free consultation
+                Product
               </motion.button>
             </div>
           </div>
@@ -107,15 +107,15 @@ export default function Header() {
               className="md:hidden pb-4 space-y-3 overflow-hidden"
             >
               {navLinks.map((link) => (
-                  <Link
-                    key={link.to}
-                    to={link.to}
-                    className="block text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium py-2"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="block text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors font-medium py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
 
               {/* Mobile-only action links (collapsed actions) */}
               <div className="pt-3 border-t border-gray-200 dark:border-slate-700 mt-2 space-y-2">
@@ -127,11 +127,11 @@ export default function Header() {
                   Why us
                 </Link>
                 <Link
-                  to="/contact"
-                  className="block text-center btn-primary py-2 rounded w-full"
+                  to="/product"
+                  className="block text-center px-6 py-2 text-sm font-medium text-white transition-all duration-200 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg shadow-purple-500/25"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Get Free consultation
+                  Product
                 </Link>
               </div>
             </motion.nav>
