@@ -30,7 +30,10 @@ export const FloatingMockups = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-16">
-              <Button className="h-14 px-8 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold hover:opacity-90 transition-all shadow-lg shadow-purple-500/25 text-base flex items-center gap-2">
+              <Button
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="h-14 px-8 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold hover:opacity-90 transition-all shadow-lg shadow-purple-500/25 text-base flex items-center gap-2"
+              >
                 Request Demo
                 <ArrowRight className="w-5 h-5" />
               </Button>

@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 
 export const CTA = () => {
   return (
-    <section className="relative py-24 overflow-hidden bg-[#0f0a1e]">
+    <section id="contact" className="relative py-24 overflow-hidden bg-[#0f0a1e]">
       {/* Background Gradients */}
       <div className="absolute inset-0 bg-gradient-to-b from-slate-950 to-[#1a0b2e]"></div>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
