@@ -20,6 +20,8 @@ const Services = lazy(() => import("./pages/Services"));
 const Solutions = lazy(() => import("./pages/Solutions"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Product = lazy(() => import("./pages/Product"));
+const Recognition = lazy(() => import("./pages/Recognition"));
+const InvestIQ = lazy(() => import("./pages/InvestIQ"));
 
 const queryClient = new QueryClient();
 
@@ -70,6 +72,22 @@ const App = () => (
               element={
                 <Suspense fallback={<LoadingSpinner />}>
                   <Product />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/recognition"
+              element={
+                <Suspense fallback={<LoadingSpinner />}>
+                  <Recognition />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/investiq"
+              element={
+                <Suspense fallback={<LoadingSpinner />}>
+                  <InvestIQ />
                 </Suspense>
               }
             />

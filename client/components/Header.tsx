@@ -60,13 +60,13 @@ export default function Header() {
               </motion.button>
               <motion.button
                 type="button"
-                aria-label="Product"
+                aria-label="Products"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="hidden md:inline-flex items-center justify-center px-6 py-2 text-sm font-medium text-white transition-all duration-200 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg shadow-purple-500/25 whitespace-nowrap"
                 onClick={() => navigate("/product")}
               >
-                Product
+                Products
               </motion.button>
             </div>
           </div>
@@ -131,7 +131,7 @@ export default function Header() {
                   className="block text-center px-6 py-2 text-sm font-medium text-white transition-all duration-200 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-lg shadow-purple-500/25"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  Product
+                  Products
                 </Link>
               </div>
             </motion.nav>
