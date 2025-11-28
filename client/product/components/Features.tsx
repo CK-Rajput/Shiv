@@ -66,9 +66,10 @@ export const Features = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.2 }}
           >
             <Badge variant="outline" className="mb-4 border-purple-500/50 text-purple-300 px-4 py-1">
               Core Capabilities
@@ -76,20 +77,20 @@ export const Features = () => {
           </motion.div>
 
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+            transition={{ delay: 0.05, duration: 0.2 }}
             className="text-4xl md:text-5xl font-bold text-white mb-4"
           >
             Powerful Features
           </motion.h2>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.1, duration: 0.2 }}
             className="text-gray-400 text-lg max-w-2xl mx-auto"
           >
             Comprehensive AI-powered security solution
@@ -100,11 +101,11 @@ export const Features = () => {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 + 0.3 }}
-              className="group relative overflow-hidden rounded-3xl bg-[#151024] border border-white/10 hover:border-purple-500/50 transition-all duration-500"
+              transition={{ delay: index * 0.05, duration: 0.2 }}
+              className="group relative overflow-hidden rounded-3xl bg-[#151024] border border-white/10 hover:border-purple-500/50 transition-all duration-300"
             >
               <div className="flex flex-col md:flex-row h-full">
                 {/* Image Section */}

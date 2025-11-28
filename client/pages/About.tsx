@@ -89,16 +89,28 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-primary dark:bg-primary rounded-lg p-8 text-white flex flex-col items-center justify-center min-h-96"
+            className="relative rounded-[32px] p-10 text-white flex flex-col items-center justify-center min-h-[26rem] overflow-hidden shadow-[0_25px_70px_rgba(59,7,98,0.35)] bg-gradient-to-br from-[#5c1d96] via-[#7a2eb6] to-[#c339a0]"
           >
+            <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.8),_transparent_55%)] pointer-events-none" />
+            <div className="absolute -bottom-16 -right-10 w-64 h-64 bg-purple-400/30 blur-3xl rounded-full pointer-events-none" />
+            <div className="absolute -top-14 -left-12 w-44 h-44 bg-pink-400/30 blur-3xl rounded-full pointer-events-none" />
+
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="text-6xl mb-4"
+              className="relative text-6xl mb-6 drop-shadow-[0_10px_20px_rgba(0,0,0,0.35)]"
             >
               🤖
             </motion.div>
-            <h3 className="text-2xl font-bold">AI Technology</h3>
+            <div className="relative text-center">
+              <p className="text-sm uppercase tracking-[0.3em] text-white/70 mb-2">
+                Agentic Intelligence
+              </p>
+              <h3 className="text-3xl font-bold">AI Technology</h3>
+              <p className="text-white/70 mt-3 text-sm max-w-sm">
+                Hyper-realistic cognitive agents designed to work 24/7 across every business workflow.
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>

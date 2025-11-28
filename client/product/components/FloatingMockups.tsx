@@ -1,20 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 export const FloatingMockups = () => {
   return (
-    <div className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-transparent py-20">
-      <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center gap-16">
+    <div className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden bg-transparent py-20" style={{ position: 'relative', zIndex: 10 }}>
+      <div className="container mx-auto px-4 relative flex flex-col lg:flex-row items-center gap-16" style={{ zIndex: 10 }}>
 
         {/* Text Content (Left side) */}
         <div className="flex-1 text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
           >
             <Badge variant="outline" className="mb-6 border-purple-500/30 bg-purple-500/10 text-purple-200 px-4 py-2 gap-2 rounded-full">
               <Sparkles className="w-4 h-4 text-purple-400" />
@@ -30,13 +29,6 @@ export const FloatingMockups = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-16">
-              <Button
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="h-14 px-8 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold hover:opacity-90 transition-all shadow-lg shadow-purple-500/25 text-base flex items-center gap-2"
-              >
-                Request Demo
-                <ArrowRight className="w-5 h-5" />
-              </Button>
               <div className="flex items-center gap-3 px-6 h-14 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
                 <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
                 <span className="text-gray-200 font-medium">System Online</span>
@@ -171,7 +163,8 @@ export const FloatingMockups = () => {
           <motion.div
             animate={{ y: [0, 20, 0] }}
             transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
-            className="absolute -top-6 -right-6 bg-[#2d1b4e] border border-purple-500/30 p-4 rounded-2xl shadow-xl z-20"
+            className="absolute -top-6 -right-6 bg-[#2d1b4e] border border-purple-500/30 p-3.5 rounded-xl shadow-xl z-20"
+            style={{ transform: 'scale(0.7)' }}
           >
             <div className="text-2xl font-bold text-white mb-0.5">24/7</div>
             <div className="text-[10px] text-purple-300">Active</div>
@@ -180,10 +173,11 @@ export const FloatingMockups = () => {
           <motion.div
             animate={{ y: [0, -20, 0] }}
             transition={{ duration: 5, repeat: Infinity, delay: 1 }}
-            className="absolute -bottom-6 -left-6 bg-[#2d1b4e] border border-purple-500/30 p-5 rounded-2xl shadow-xl z-20"
+            className="absolute -bottom-6 -left-6 bg-[#2d1b4e] border border-purple-500/30 p-3.5 rounded-xl shadow-xl z-20"
+            style={{ transform: 'scale(0.7)' }}
           >
-            <div className="text-3xl font-bold text-white mb-0.5">99.9%</div>
-            <div className="text-xs text-purple-300">Accuracy</div>
+            <div className="text-2xl font-bold text-white mb-0.5">99.9%</div>
+            <div className="text-[10px] text-purple-300">Accuracy</div>
           </motion.div>
 
         </motion.div>

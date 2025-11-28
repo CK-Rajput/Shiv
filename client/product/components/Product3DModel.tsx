@@ -3,56 +3,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { useGLTF, Environment, Float } from '@react-three/drei';
 import * as THREE from 'three';
 
-// -----------------------------------------------------------------------------
-// 1. Browser-Side "Redis" (IndexedDB) Caching Implementation
-// -----------------------------------------------------------------------------
-class ModelCacheManager {
-    private dbName = 'maheshwara-cache-v1';
-    private storeName = '3d-models';
-    private db: IDBDatabase | null = null;
-
-    async init() {
-        if (this.db) return;
-        return new Promise<void>((resolve, reject) => {
-            const request = indexedDB.open(this.dbName, 1);
-            request.onerror = () => reject(request.error);
-            request.onsuccess = () => {
-                this.db = request.result;
-                resolve();
-            };
-            request.onupgradeneeded = (event) => {
-                const db = (event.target as IDBOpenDBRequest).result;
-                if (!db.objectStoreNames.contains(this.storeName)) {
-                    db.createObjectStore(this.storeName);
-                }
-            };
-        });
-    }
-
-    async get(url: string): Promise<ArrayBuffer | null> {
-        await this.init();
-        return new Promise((resolve, reject) => {
-            const transaction = this.db!.transaction([this.storeName], 'readonly');
-            const store = transaction.objectStore(this.storeName);
-            const request = store.get(url);
-            request.onsuccess = () => resolve(request.result || null);
-            request.onerror = () => reject(request.error);
-        });
-    }
-
-    async set(url: string, data: ArrayBuffer): Promise<void> {
-        await this.init();
-        return new Promise((resolve, reject) => {
-            const transaction = this.db!.transaction([this.storeName], 'readwrite');
-            const store = transaction.objectStore(this.storeName);
-            const request = store.put(data, url);
-            request.onsuccess = () => resolve();
-            request.onerror = () => reject(request.error);
-        });
-    }
-}
-
-const cacheManager = new ModelCacheManager();
+// Removed IndexedDB caching to improve initial load performance
 
 // -----------------------------------------------------------------------------
 // 2. 3D Model Component
@@ -120,40 +71,61 @@ function FallbackModel() {
 // 4. Main Component
 // -----------------------------------------------------------------------------
 export const Product3DModel = () => {
-    const [isCached, setIsCached] = useState(false);
+    const [shouldLoad, setShouldLoad] = useState(false);
 
     useEffect(() => {
-        // Simulate "Redis" caching check
-        cacheManager.get('/Part1.glb').then((data) => {
-            if (data) {
-                console.log("Loaded 3D model from local cache (Redis-style)");
-                setIsCached(true);
-            } else {
-                // In a real app, we'd fetch and store here. 
-                // For GLTF, useGLTF handles fetching, so we just mark as initialized.
-                cacheManager.set('/Part1.glb', new ArrayBuffer(1)); // Dummy cache marker
-            }
-        });
+        // Delay 3D model loading to prioritize content rendering
+        const timer = setTimeout(() => {
+            setShouldLoad(true);
+        }, 100); // Small delay to ensure content renders first
+
+        return () => clearTimeout(timer);
     }, []);
 
+    // Don't render until we're ready - prevents blocking
+    if (!shouldLoad) {
+        return null;
+    }
+
     return (
-        <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 0 }}>
+        <div 
+            className="fixed inset-0 pointer-events-none" 
+            style={{ 
+                zIndex: 1, 
+                isolation: 'isolate',
+                pointerEvents: 'none'
+            }}
+        >
             <Canvas
                 camera={{ position: [0, 0, 8], fov: 45 }}
-                gl={{ antialias: true, alpha: true }}
-                style={{ background: 'transparent' }}
+                gl={{ 
+                    antialias: false, // Disable for faster initial render
+                    alpha: true, 
+                    preserveDrawingBuffer: false,
+                    powerPreference: "high-performance",
+                    stencil: false,
+                    depth: true
+                }}
+                dpr={[1, 2]} // Limit pixel ratio for performance
+                performance={{ min: 0.5 }} // Lower performance threshold
+                style={{ 
+                    background: 'transparent', 
+                    pointerEvents: 'none',
+                    width: '100%',
+                    height: '100%'
+                }}
             >
                 <ambientLight intensity={0.8} />
                 <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={1} />
                 <pointLight position={[-10, -10, -10]} intensity={0.5} color="#d946ef" />
 
-                <Suspense fallback={<FallbackModel />}>
+                <Suspense fallback={null}>
                     <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
                         <Model />
                     </Float>
                 </Suspense>
 
-                <Environment preset="city" />
+                {/* Remove Environment to speed up loading */}
             </Canvas>
         </div>
     );

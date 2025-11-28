@@ -4,7 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-:root {
+.product-theme {
   --font-size: 16px;
   --background: #ffffff;
   --foreground: oklch(0.145 0 0);
@@ -45,7 +45,7 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-.dark {
+.product-theme.dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.145 0 0);
@@ -127,21 +127,34 @@
   .perspective-1000 {
     perspective: 1000px;
   }
-  
+
   @keyframes scan {
-    0% { top: 0%; opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { top: 100%; opacity: 0; }
+    0% {
+      top: 0%;
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 1;
+    }
+
+    90% {
+      opacity: 1;
+    }
+
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
   }
 }
 
 @layer base {
-  * {
+  .product-theme * {
     @apply border-border outline-ring/50;
   }
 
-  body {
+  .product-theme {
     @apply bg-background text-foreground;
   }
 }
@@ -150,7 +163,7 @@
  * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
  */
 @layer base {
-  :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
+  .product-theme :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
     h1 {
       font-size: var(--text-2xl);
       font-weight: var(--font-weight-medium);
@@ -201,6 +214,6 @@
   }
 }
 
-html {
+.product-theme {
   font-size: var(--font-size);
 }

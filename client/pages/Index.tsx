@@ -312,27 +312,7 @@ export default function Index() {
                 innovation, optimize operations, and accelerate growth for
                 modern businesses.
               </motion.p>
-              <motion.div
-                className="flex gap-4 flex-wrap"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-              >
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="btn-primary"
-                >
-                  Get Started
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="btn-outline dark:border-primary dark:text-primary"
-                >
-                  Learn More
-                </motion.button>
-              </motion.div>
+
             </motion.div>
 
             <motion.div
@@ -343,12 +323,12 @@ export default function Index() {
             >
               {floatingCards.map((card, idx) => {
                 const positions = [
-                  { top: "10%", left: "20%", delay: 0 },
-                  { top: "30%", right: "15%", delay: 0.2 },
-                  { top: "20%", right: "5%", delay: 0.4 },
-                  { bottom: "30%", left: "10%", delay: 0.6 },
-                  { bottom: "20%", right: "25%", delay: 0.8 },
-                  { bottom: "10%", right: "5%", delay: 1 },
+                  { top: "5%", left: "5%", delay: 0 },
+                  { top: "10%", right: "10%", delay: 0.2 },
+                  { top: "40%", left: "15%", delay: 0.4 },
+                  { top: "50%", right: "5%", delay: 0.6 },
+                  { bottom: "10%", left: "5%", delay: 0.8 },
+                  { bottom: "5%", right: "20%", delay: 1 },
                 ];
                 const pos = positions[idx];
                 return (
@@ -625,11 +605,10 @@ function SectionRenderer({
       whileInView="visible"
       viewport={{ once: true }}
       variants={containerVariants}
-      className={`section-container ${
-        variant === "bordered"
-          ? "bg-white dark:bg-slate-900"
-          : "bg-gray-50 dark:bg-slate-800"
-      } transition-colors`}
+      className={`section-container ${variant === "bordered"
+        ? "bg-white dark:bg-slate-900"
+        : "bg-gray-50 dark:bg-slate-800"
+        } transition-colors`}
     >
       <h2 className="section-title dark:text-white">{title}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

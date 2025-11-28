@@ -27,7 +27,7 @@ export default function Contact() {
     },
   });
 
-  const { ref } = useIntersectionObserver({ triggerOnce: true });
+  const { ref } = useIntersectionObserver<HTMLDivElement>({ triggerOnce: true });
 
   const onSubmit = async (data: ContactFormData) => {
     try {

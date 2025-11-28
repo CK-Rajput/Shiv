@@ -12,6 +12,8 @@ import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "./context/ThemeContext";
 import LoadingSpinner from "./components/LoadingSpinner";
 
+import ScrollToTop from "./components/ScrollToTop";
+
 // Code splitting - lazy load pages for better performance
 const About = lazy(() => import("./pages/About"));
 const Services = lazy(() => import("./pages/Services"));
@@ -28,6 +30,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route
